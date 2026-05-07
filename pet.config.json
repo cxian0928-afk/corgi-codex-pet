@@ -1,0 +1,170 @@
+{
+  "pet": {
+    "id": "corgi-companion",
+    "displayName": "Corgi Companion",
+    "description": "A cheerful corgi digital pet with a laptop-working running state.",
+    "baseReference": "assets/actions/base-reference.png"
+  },
+  "atlas": {
+    "columns": 8,
+    "rows": 9,
+    "cellWidth": 192,
+    "cellHeight": 208
+  },
+  "sourceProcessing": {
+    "defaultLayoutMode": "auto-detect-green-screen",
+    "backgroundKeyRgb": [0, 255, 0],
+    "backgroundTolerance": 72,
+    "backgroundDominanceThreshold": 60
+  },
+  "standardActionsOrder": [
+    "idle",
+    "running-right",
+    "running-left",
+    "waving",
+    "jumping",
+    "failed",
+    "waiting",
+    "running",
+    "review"
+  ],
+  "actions": {
+    "idle": {
+      "slotIndex": 0,
+      "frames": 6,
+      "source": "assets/actions/idle.png",
+      "layoutMode": "auto-detect-green-screen",
+      "enabled": true,
+      "status": "approved",
+      "notes": "Calm blink and breathing loop."
+    },
+    "running-right": {
+      "slotIndex": 1,
+      "frames": 8,
+      "source": "assets/actions/running-right.png",
+      "layoutMode": "manual-slice-boxes",
+      "sliceBoxes": [
+        [0, 271],
+        [272, 542],
+        [543, 813],
+        [814, 1085],
+        [1086, 1357],
+        [1358, 1628],
+        [1629, 1899],
+        [1900, 2171]
+      ],
+      "enabled": true,
+      "status": "approved",
+      "notes": "Directional locomotion to the right."
+    },
+    "running-left": {
+      "slotIndex": 2,
+      "frames": 8,
+      "source": "assets/actions/running-left.png",
+      "layoutMode": "manual-slice-boxes",
+      "sliceBoxes": [
+        [0, 271],
+        [272, 542],
+        [543, 813],
+        [814, 1085],
+        [1086, 1357],
+        [1358, 1628],
+        [1629, 1899],
+        [1900, 2171]
+      ],
+      "enabled": true,
+      "status": "approved",
+      "notes": "Directional locomotion to the left."
+    },
+    "waving": {
+      "slotIndex": 3,
+      "frames": 4,
+      "source": "assets/actions/waving.png",
+      "layoutMode": "auto-detect-green-screen",
+      "enabled": true,
+      "status": "approved",
+      "notes": "Greeting via paw pose only."
+    },
+    "jumping": {
+      "slotIndex": 4,
+      "frames": 5,
+      "source": "assets/actions/jumping.png",
+      "layoutMode": "manual-slice-boxes",
+      "sliceBoxes": [
+        [0, 560],
+        [561, 1121],
+        [1122, 1681],
+        [1682, 2242],
+        [2243, 2803]
+      ],
+      "enabled": true,
+      "status": "approved",
+      "notes": "Short hop cycle with no landing effects."
+    },
+    "failed": {
+      "slotIndex": 5,
+      "frames": 8,
+      "source": "assets/actions/failed.png",
+      "layoutMode": "manual-slice-boxes",
+      "sliceBoxes": [
+        [0, 313],
+        [314, 626],
+        [627, 939],
+        [940, 1253],
+        [1254, 1567],
+        [1568, 1880],
+        [1881, 2193],
+        [2194, 2507]
+      ],
+      "enabled": true,
+      "status": "approved-with-note",
+      "notes": "Crying frames work; keep tears attached tightly to the face if revised."
+    },
+    "waiting": {
+      "slotIndex": 6,
+      "frames": 6,
+      "source": "assets/actions/waiting.png",
+      "layoutMode": "auto-detect-green-screen",
+      "enabled": true,
+      "status": "needs-review",
+      "notes": "Readable, but currently close to idle; consider a more patient waiting pose later."
+    },
+    "running": {
+      "slotIndex": 7,
+      "frames": 6,
+      "source": "assets/actions/running.png",
+      "layoutMode": "auto-detect-green-screen",
+      "enabled": true,
+      "status": "approved",
+      "notes": "Uses a laptop as the working-state prop; keep this prop consistent if the state is replaced."
+    },
+    "review": {
+      "slotIndex": 8,
+      "frames": 6,
+      "source": "assets/actions/review.png",
+      "layoutMode": "auto-detect-green-screen",
+      "enabled": true,
+      "status": "approved",
+      "notes": "Thinking and inspection loop."
+    }
+  },
+  "extensions": {
+    "customActionsDir": "assets/actions/custom",
+    "replacementWorkflow": [
+      "Replace the PNG file for an existing action and keep the same config key.",
+      "Or point source to a new file path while preserving the expected frame count.",
+      "For a brand new action, add a new object under actions.",
+      "Use slotIndex null for unmapped custom actions until you decide where they belong."
+    ],
+    "customActionTemplate": {
+      "slotIndex": null,
+      "frames": 6,
+      "source": "assets/actions/custom/example.png",
+      "layoutMode": "auto-detect-green-screen",
+      "sliceBoxes": null,
+      "enabled": true,
+      "status": "draft",
+      "notes": "Custom action placeholder."
+    }
+  }
+}

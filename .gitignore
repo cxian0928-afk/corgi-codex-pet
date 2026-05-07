@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+
+backups/
+
+build/aligned-*/
+build/frames/
+
+.DS_Store
+Thumbs.db
