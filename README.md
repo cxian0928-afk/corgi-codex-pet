@@ -39,6 +39,31 @@
 
 ## 快速开始
 
+### 一键安装到 Codex
+
+Windows 下可以直接双击：
+
+- [install-corgi-pet.bat](install-corgi-pet.bat)
+
+它会自动：
+
+- 读取 [build/package](build/package) 里的最终宠物包
+- 识别宠物 id
+- 备份你当前已安装的同名宠物
+- 覆盖安装到 `~/.codex/pets/<pet-id>`
+
+如果你更喜欢命令行，也可以运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/install_to_codex_pet.ps1
+```
+
+可选参数：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/install_to_codex_pet.ps1 -SkipBackup
+```
+
 ### 1. 校验配置
 
 ```bash
